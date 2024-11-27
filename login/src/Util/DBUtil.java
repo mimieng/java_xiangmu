@@ -20,6 +20,8 @@ public class DBUtil {
         }
         return con;
     }
+
+
     public static void close(Connection con){
         if(con!=null){
             try {

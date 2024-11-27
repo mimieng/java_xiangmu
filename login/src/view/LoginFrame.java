@@ -1,7 +1,12 @@
 package view;
 
+import dao.UserDao;
+import dao.UserDaoImpl;
+import pojo.User;
+
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class LoginFrame extends javax.swing.JFrame{
     private JLabel jLabel1, jLabel2;
@@ -23,9 +28,33 @@ public class LoginFrame extends javax.swing.JFrame{
         this.add(btn_login);
         this.add(btn_reset);
         this.setTitle("登录界面");
-        this.setSize(250, 250);
+        this.setBounds(800, 400, 250, 250);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        btn_reset.addActionListener(e -> {
+            tcount.setText("");
+            tpsw.setText("");
+        });
+        btn_login.addActionListener(e -> {
+            String count = tcount.getText().toString();
+            String psw = tpsw.getText().toString();
+            UserDao dao = new UserDaoImpl();
+            User user = null;
+            try {
+                user = dao.login(count, psw);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+            if (user==null){
+                JOptionPane.showMessageDialog(LoginFrame.this, "登录失败");
+            }else{
+                StudentFrame sf = new StudentFrame(user);
+                LoginFrame.this.dispose();
+            }
+
+        });
     }
     public static void main(String[] args){
         new LoginFrame();
