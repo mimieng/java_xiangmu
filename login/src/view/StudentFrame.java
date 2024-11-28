@@ -62,8 +62,59 @@ public class StudentFrame extends javax.swing.JFrame{
             }
             StudentFrame.this.setNull();
         });
-    }
+        jb1.addActionListener(e -> {
+            int id = Integer.parseInt(jtf1.getText());
+            StuDao stuDao = new StuDaoImpl();
+            Student stu = null;
+            try {
+                stu = stuDao.findStudentById(id);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            if (stu != null) {
+                StudentFrame.this.setStudent(stu);
+            } else {
+               JOptionPane.showMessageDialog(StudentFrame.this, "没有"+id+"学生！");
+            }
+        });
+        jb3.addActionListener(e -> {
+            int id = Integer.parseInt(jtf1.getText());
+            StuDao stuDao = new StuDaoImpl();
+            Boolean flag= null;
+            try {
+                flag = stuDao.deleteStudent(id);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            if (flag) {
+                JOptionPane.showMessageDialog(StudentFrame.this, "删除成功！");
+            } else {
+               JOptionPane.showMessageDialog(StudentFrame.this,"刪除失敗");
+            }
+        });
+        jb4.addActionListener(e -> {
+            Student stu = StudentFrame.this.getStudent();
+            StuDao stuDao = new StuDaoImpl();
 
+            Boolean flag= null;
+            try {
+                flag = stuDao.updateStudent(stu);
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+
+            if (flag) {
+                JOptionPane.showMessageDialog(StudentFrame.this, "修改成功！");
+            } else {
+                JOptionPane.showMessageDialog(StudentFrame.this, "修改失败！");
+            }
+        });
+    }
+    public void setStudent(Student stu){
+        jtf2.setText(stu.getId()+"");
+        jtf3.setText(stu.getName());
+        jtf4.setText(stu.getScore()+"");
+    }
     public void  setNull()
     {
 

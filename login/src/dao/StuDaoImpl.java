@@ -41,4 +41,37 @@ public class StuDaoImpl implements  StuDao{
         }
         return stu;
     }
+
+    @Override
+    public boolean updateStudent(Student stu) throws SQLException {
+        boolean flag=false;
+        Connection con=DBUtil.getcon();
+        PreparedStatement ps = con.prepareStatement("update student set sname=?,score=? where son=?");
+        ps.setString(1,stu.getName());
+        ps.setDouble(2,stu.getScore());
+        ps.setInt(3,stu.getId());
+        int i=ps.executeUpdate();
+        if(i>0){
+            flag=true;
+        }else {
+            flag = false;
+        }
+        DBUtil.close(con);
+        return  flag;
+    }
+
+    @Override
+    public boolean deleteStudent(int id) throws SQLException {
+        boolean flag=false;
+        Connection con=DBUtil.getcon();
+        PreparedStatement ps=con.prepareStatement("delete from student where son=?");
+        ps.setInt(1,id);
+        int i=ps.executeUpdate();
+        if(i>0){
+            flag=true;
+        }else {
+            flag=false;
+        }
+        return flag;
+    }
 }
