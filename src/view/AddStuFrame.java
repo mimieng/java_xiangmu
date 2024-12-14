@@ -1,6 +1,3 @@
-/*
- * Created by JFormDesigner on Sun Dec 01 13:40:26 CST 2024
- */
 
 package view;
 
@@ -43,23 +40,21 @@ public class AddStuFrame extends JFrame {
                 StudentClass stuClass = (StudentClass) cb_class.getSelectedItem();
                 String sex = rb_male.isSelected()? rb_male.getText() : rb_famale.isSelected() ? rb_famale.getText() :rb_secret.getText(); ;
                 if (StringUtil.isEmpty(name)){
-                    JOptionPane.showMessageDialog(null, "请输入用户名！");
+                    JOptionPane.showMessageDialog(AddStuFrame.this, "请输入用户名！");
 
                 }
                 if (StringUtil.isEmpty(psw)){
-                    JOptionPane.showMessageDialog(null, "请输入密码！");
+                    JOptionPane.showMessageDialog(AddStuFrame.this, "请输入密码！");
                 }else if (StringUtil.isEmpty(sex)){
-                    JOptionPane.showMessageDialog(null, "请选择性别！");
-                }else {
+                    JOptionPane.showMessageDialog(AddStuFrame.this, "请选择性别！");
+                }
                     Student student = new Student();
                     student.setName(name);
                     student.setPassword(psw);
                     student.setClassId(stuClass.getId());
                     student.setSex(sex);
-
-                }
                 StudentDao studentDao = new StudentDao();
-                boolean flag = studentDao.addStudent(new Student());
+                boolean flag = studentDao.addStudent(student);
                 if (flag) {
                     JOptionPane.showMessageDialog(null, "添加成功！");
                 }else{

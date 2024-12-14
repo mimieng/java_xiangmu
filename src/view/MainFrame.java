@@ -35,6 +35,44 @@ public class MainFrame extends JFrame {
                 new AddStuFrame().setVisible(true);
             }
         });
+        item_stuList.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new StuManageFrame().setVisible(true);
+            }
+        });
+        item_addClass.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddClassFrame().setVisible(true);
+            }
+        });
+        item_classList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new ClassFrame().setVisible(true);
+            }
+        });
+        item_addTea.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddTeaFrame().setVisible(true);
+            }
+        });
+        item_teaList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new TeaManageFrame().setVisible(true);
+            }
+        });
+        item_aboutUs.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new settingFrame().setVisible(true);
+            }
+        });
 
 
     }
