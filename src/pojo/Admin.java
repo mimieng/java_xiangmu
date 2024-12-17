@@ -1,6 +1,6 @@
 package pojo;
 
-public class Admin{
+public class Admin {
 	private int id;
 	private String name;
 	private String password;

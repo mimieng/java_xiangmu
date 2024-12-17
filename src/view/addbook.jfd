@@ -4,93 +4,84 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
-			"$columnSpecs": "109dlu, labelcompgap, 141dlu, labelcompgap, 100dlu"
-			"$rowSpecs": "50dlu, linegap, 38dlu, linegap, 47dlu, linegap, 48dlu, linegap, 37dlu"
+			"$columnSpecs": "64dlu, labelcompgap, 133dlu"
+			"$rowSpecs": "36dlu, linegap, 40dlu, linegap, 38dlu, linegap, 31dlu, linegap, 29dlu"
 		} ) {
 			name: "this"
-			"title": "登录窗口"
-			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/学生.png" )
-			"$sizePolicy": 1
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "欢迎来到图书管理系统"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/logo.png" )
-				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+				"text": "图书名称："
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
-				"gridWidth": 5
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
+				"gridX": 1
+				"gridY": 1
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 1
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
-				"text": "用户名："
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
+				"text": "图书作者："
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 3
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "txt_name"
+				name: "textField2"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 3
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
-				"text": "密  码："
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/密码.png" )
+				"text": "图书类别："
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
-				"gridX": 1
 				"gridY": 5
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "pf_psw"
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBox1"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 5
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
-				"text": "用户类型："
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/userType.png" )
+				"text": "图书数量："
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 7
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
-			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "cb_type"
-				"model": new javax.swing.DefaultComboBoxModel {
-					selectedItem: "系统管理员"
-					addElement( "系统管理员" )
-					addElement( "学生" )
-				}
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 7
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "btn_login"
-				"text": "登录"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/登录.png" )
+				name: "button1"
+				"text": "确认"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 9
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "btn_reset"
+				name: "button2"
 				"text": "重置"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/重置.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 9
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 690, 440 )
+			"size": new java.awt.Dimension( 400, 365 )
 		} )
 	}
 }

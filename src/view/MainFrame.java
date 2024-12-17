@@ -11,6 +11,7 @@ import javax.swing.*;
 import com.jgoodies.forms.factories.*;
 import com.jgoodies.forms.layout.*;
 import pojo.Admin;
+import pojo.Student;
 
 /**
  * @author 晚吟
@@ -18,6 +19,7 @@ import pojo.Admin;
 public class MainFrame extends JFrame {
     public static String usertype;
     public static Admin admin;
+
     public MainFrame(String type , Admin admins) {
         usertype=type;
         admin = admins;
@@ -29,48 +31,56 @@ public class MainFrame extends JFrame {
 
             }
         });
+        menuItem1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+
+            }
+        });
         item_addStu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddStuFrame().setVisible(true);
+                new addbook().setVisible(true);
             }
         });
         item_stuList.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                new StuManageFrame().setVisible(true);
+                new booklist().setVisible(true);
             }
         });
         item_addClass.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddClassFrame().setVisible(true);
+                new addbrrow().setVisible(true);
             }
         });
         item_classList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ClassFrame().setVisible(true);
+                new brrowList().setVisible(true);
             }
         });
         item_addTea.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddTeaFrame().setVisible(true);
+                new addUser().setVisible(true);
             }
         });
         item_teaList.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new TeaManageFrame().setVisible(true);
+                new userList().setVisible(true);
             }
         });
         item_aboutUs.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new settingFrame().setVisible(true);
+                new about().setVisible(true);
             }
         });
 
@@ -127,16 +137,16 @@ public class MainFrame extends JFrame {
 
             //======== menu2 ========
             {
-                menu2.setText("\u5b66\u751f\u7ba1\u7406");
+                menu2.setText("\u56fe\u4e66\u7ba1\u7406");
                 menu2.setIcon(new ImageIcon(getClass().getResource("/\u5b66\u751f\u7ba1\u7406.png")));
 
                 //---- item_addStu ----
-                item_addStu.setText("\u6dfb\u52a0\u5b66\u751f");
+                item_addStu.setText("\u6dfb\u52a0\u56fe\u4e66");
                 item_addStu.setIcon(new ImageIcon(getClass().getResource("/\u6dfb\u52a0.png")));
                 menu2.add(item_addStu);
 
                 //---- item_stuList ----
-                item_stuList.setText("\u5b66\u751f\u5217\u8868");
+                item_stuList.setText("\u56fe\u4e66\u5217\u8868");
                 item_stuList.setIcon(new ImageIcon(getClass().getResource("/\u7528\u6237\u5217\u8868.png")));
                 menu2.add(item_stuList);
             }
@@ -144,16 +154,16 @@ public class MainFrame extends JFrame {
 
             //======== menu8 ========
             {
-                menu8.setText("\u73ed\u7ea7\u7ba1\u7406");
+                menu8.setText("\u501f\u9605\u56fe\u4e66");
                 menu8.setIcon(new ImageIcon(getClass().getResource("/\u73ed\u7ea7\u7ba1\u7406.png")));
 
                 //---- item_addClass ----
-                item_addClass.setText("\u6dfb\u52a0\u73ed\u7ea7");
+                item_addClass.setText("\u6dfb\u52a0\u501f\u9605");
                 item_addClass.setIcon(new ImageIcon(getClass().getResource("/\u6dfb\u52a0.png")));
                 menu8.add(item_addClass);
 
                 //---- item_classList ----
-                item_classList.setText("\u73ed\u7ea7\u5217\u8868");
+                item_classList.setText("\u501f\u9605\u5217\u8868");
                 item_classList.setIcon(new ImageIcon(getClass().getResource("/\u73ed\u7ea7\u5217\u8868.png")));
                 menu8.add(item_classList);
             }
@@ -161,16 +171,16 @@ public class MainFrame extends JFrame {
 
             //======== menu9 ========
             {
-                menu9.setText("\u6559\u5e08\u7ba1\u7406");
+                menu9.setText("\u7528\u6237\u7ba1\u7406");
                 menu9.setIcon(new ImageIcon(getClass().getResource("/\u8001\u5e08.png")));
 
                 //---- item_addTea ----
-                item_addTea.setText("\u6dfb\u52a0\u6559\u5e08");
+                item_addTea.setText("\u6dfb\u52a0\u7528\u6237");
                 item_addTea.setIcon(new ImageIcon(getClass().getResource("/\u6dfb\u52a0.png")));
                 menu9.add(item_addTea);
 
                 //---- item_teaList ----
-                item_teaList.setText("\u6559\u5e08\u5217\u8868");
+                item_teaList.setText("\u7528\u6237\u5217\u8868");
                 item_teaList.setIcon(new ImageIcon(getClass().getResource("/\u8001\u5e08.png")));
                 menu9.add(item_teaList);
             }

@@ -34,7 +34,7 @@ public class StudentDao  {
 	}
 	public List<Student> getStudentList(Student student){
 		List<Student> retList = new ArrayList<Student>();
-		StringBuffer sqlString = new StringBuffer("select * from s_student");
+		StringBuffer sqlString = new StringBuffer("select * from user");
 		if(!StringUtil.isEmpty(student.getName())){
 			sqlString.append(" and name like '%"+student.getName()+"%'");
 		}
@@ -49,8 +49,8 @@ public class StudentDao  {
 				Student s = new Student();
 				s.setId(executeQuery.getInt("id"));
 				s.setName(executeQuery.getString("name"));
-				s.setClassId(executeQuery.getInt("classId"));
-				s.setSex(executeQuery.getString("sex"));
+
+				s.setSex(executeQuery.getString("gender"));
 				s.setPassword(executeQuery.getString("password"));
 				retList.add(s);
 			}
@@ -62,7 +62,7 @@ public class StudentDao  {
 		return retList;
 	}
 	public boolean delete(int id){
-		String sql = "delete from s_student where id=?";
+		String sql = "delete from user where id=?";
 		con = DBUtil.getCon();
 		try {
 			PreparedStatement preparedStatement = con.prepareStatement(sql);
@@ -78,7 +78,7 @@ public class StudentDao  {
 		return false;
 	}
 	public boolean update(Student student){
-		String sql = "update s_student set name=?, classId=?,sex=?,password=? where id=?";
+		String sql = "update user set name=?, classId=?,sex=?,password=? where id=?";
 		con = DBUtil.getCon();
 		try {
 			PreparedStatement preparedStatement = con.prepareStatement(sql);
@@ -98,8 +98,8 @@ public class StudentDao  {
 		return false;
 	}
 	public String editPassword(Student student,String newPassword){
-		String sql = "select * from s_student where id=? and password=?";
-		String sqlString = "update s_student set password = ? where id = ?";
+		String sql = "select * from user where id=? and password=?";
+		String sqlString = "update user set password = ? where id = ?";
 		PreparedStatement prst = null;
 		int id = 0;
 		String retString = "修改失败";
@@ -129,7 +129,7 @@ public class StudentDao  {
 		return retString;
 	}
 	public Student login(Student student){
-		String sql = "select * from s_student where name=? and password=?";
+		String sql = "select * from user where name=? and password=?";
 		Student studentRst = null;
 		con = DBUtil.getCon();
 		try {
@@ -140,10 +140,9 @@ public class StudentDao  {
 			if(executeQuery.next()){
 				studentRst = new Student();
 				studentRst.setId(executeQuery.getInt("id"));
-				studentRst.setClassId(executeQuery.getInt("classId"));
 				studentRst.setName(executeQuery.getString("name"));
 				studentRst.setPassword(executeQuery.getString("password"));
-				studentRst.setSex(executeQuery.getString("sex"));
+				studentRst.setSex(executeQuery.getString("gender"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

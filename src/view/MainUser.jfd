@@ -4,12 +4,11 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
-			"$rowSpecs": "1200"
 			"$columnSpecs": "1920"
+			"$rowSpecs": "1200"
 		} ) {
 			name: "this"
-			"title": "学生信息系统"
-			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/学生管理.png" )
+			"title": "图书管理系统"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
 				"$columnSpecs": "1920"
 				"$rowSpecs": "1200"
@@ -25,77 +24,55 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu1"
 					"text": "系统设置"
-					"icon": new com.jformdesigner.model.SwingIcon( 0, "/系统设置.png" )
-					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_psw"
-						"text": "修改密码"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/修改密码.png" )
-					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "menuItem1"
-						"text": "退出程序"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/退出.png" )
+						"text": "修改密码"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem2"
+						"text": "退出系统"
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-					name: "menu2"
-					"text": "图书管理"
-					"icon": new com.jformdesigner.model.SwingIcon( 0, "/学生管理.png" )
+					name: "menu4"
+					"text": "图书大全"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_addStu"
-						"text": "添加图书"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
+						name: "menuItem3"
+						"text": "图书列表"
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu6"
+					"text": "借阅图书"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem4"
+						"text": "借阅图书"
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_stuList"
-						"text": "图书列表"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户列表.png" )
+						name: "menuItem5"
+						"text": "借阅列表"
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu8"
-					"text": "借阅图书"
-					"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级管理.png" )
+					"text": "归还图书"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_addClass"
-						"text": "添加借阅"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
-					} )
-					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_classList"
-						"text": "借阅列表"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级列表.png" )
+						name: "menuItem6"
+						"text": "归还图书"
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-					name: "menu9"
-					"text": "用户管理"
-					"icon": new com.jformdesigner.model.SwingIcon( 0, "/老师.png" )
+					name: "menu11"
+					"text": "关于我们"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_addTea"
-						"text": "添加用户"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
-					} )
-					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_teaList"
-						"text": "用户列表"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/老师.png" )
-					} )
-				} )
-				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-					name: "menu10"
-					"text": "帮助"
-					"icon": new com.jformdesigner.model.SwingIcon( 0, "/帮助.png" )
-					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_aboutUs"
+						name: "menuItem7"
 						"text": "关于我们"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/关于我们.png" )
 					} )
 				} )
 			}
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 10, 0 )
-			"size": new java.awt.Dimension( 470, 300 )
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 670, 395 )
 		} )
 	}
 }

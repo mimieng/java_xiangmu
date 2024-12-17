@@ -1,7 +1,3 @@
-/*
- * Created by JFormDesigner on Sun Dec 01 11:58:31 CST 2024
- */
-
 package view;
 
 import javax.swing.*;
@@ -10,62 +6,67 @@ import com.jgoodies.forms.layout.*;
 import dao.AdminDao;
 import pojo.Admin;
 import util.StringUtil;
-import view.LoginFrame;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-/**
- * @author 晚吟
- */
-public class EditPswFrame extends JFrame  {
+public class EditPswFrame extends JFrame {
+
     public EditPswFrame() {
-
         initComponents();
-        if (MainFrame.usertype.equals("系统管理员")) {
+        initUserLabel();
+        initActions();
+    }
+
+    private void initUserLabel() {
+        if ("系统管理员".equals(MainFrame.usertype)) {
             Admin admin = MainFrame.admin;
             label_user.setText("【欢迎系统管理员】" + admin.getName());
         }
-        btn_sure.addActionListener(new ActionListener() {
+    }
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String old = pf_old.getText().toString();
-                String new1 = pf_new1.getText().toString();
-                String new2 = pf_new2.getText().toString();
-                if (StringUtil.isEmpty(old)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "请输入旧密码！");
-                }
-                if (StringUtil.isEmpty(new1)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "请输入新密码！");
-                }
-                if (StringUtil.isEmpty(new2)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "请输入确认密码！");
-                }
-                if (!new1.equals(new2)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "两次输入的密码不一致！");
-                }
-                AdminDao adminDao = new AdminDao();
-                Admin admin =  MainFrame.admin;
-                admin.setPassword(old);
-                String str = adminDao.editPassword(admin, new1);
-                JOptionPane.showMessageDialog(EditPswFrame.this, str);
+    private void initActions() {
+        btn_sure.addActionListener(e -> updatePassword());
+        btn_reset.addActionListener(e -> resetFields());
+    }
 
+    private void updatePassword() {
+        String oldPassword = pf_old.getText();
+        String newPassword = pf_new1.getText();
+        String confirmPassword = pf_new2.getText();
 
-            }
-        });
-        btn_reset.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pf_old.setText("");
-                pf_new1.setText("");
-                pf_new2.setText("");
-            }
-        });
-
+        if (StringUtil.isEmpty(oldPassword)) {
+            showMessage("请输入旧密码！");
+            return;
+        }
+        if (StringUtil.isEmpty(newPassword)) {
+            showMessage("请输入新密码！");
+            return;
+        }
+        if (StringUtil.isEmpty(confirmPassword)) {
+            showMessage("请输入确认密码！");
+            return;
+        }
+        if (!newPassword.equals(confirmPassword)) {
+            showMessage("两次输入的密码不一致！");
+            return;
         }
 
+        AdminDao adminDao = new AdminDao();
+        Admin admin = MainFrame.admin;
+        admin.setPassword(oldPassword);
+        String result = adminDao.editPassword(admin, newPassword);
+        showMessage(result);
+    }
+
+    private void resetFields() {
+        pf_old.setText("");
+        pf_new1.setText("");
+        pf_new2.setText("");
+    }
+
+    private void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
