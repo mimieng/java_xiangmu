@@ -4,15 +4,14 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
-			"$columnSpecs": "89dlu, labelcompgap, 155dlu, labelcompgap, 67dlu"
-			"$rowSpecs": "49dlu, linegap, 47dlu, linegap, 47dlu, linegap, 67dlu, linegap, 46dlu"
+			"$columnSpecs": "103dlu, labelcompgap, 99dlu"
+			"$rowSpecs": "37dlu, linegap, 42dlu, linegap, 39dlu, linegap, 38dlu, linegap, 38dlu"
 		} ) {
 			name: "this"
 			"title": "修改密码"
-			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/修改密码.png" )
-			"$sizePolicy": 1
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/课程列表.png" )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
+				name: "lUser"
 				"text": "当前用户："
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
@@ -22,12 +21,13 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label_user"
+				"text": "【系统管理员】admin"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 1
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "Ipsw"
+				name: "lpsw"
 				"text": "原密码："
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/password.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
@@ -35,22 +35,22 @@ new FormModel {
 				"gridY": 3
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
 				name: "pf_old"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 3
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "Ipswnew"
-				"text": "修改密码："
+				name: "lpswnew"
+				"text": "新密码："
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/修改密码.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 5
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
 				name: "pf_new1"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
@@ -58,14 +58,14 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label5"
-				"text": "确认按钮："
+				"text": "确认新密码："
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/修改密码.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 7
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
 				name: "pf_new2"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
@@ -78,7 +78,7 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 9
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btn_reset"
@@ -87,11 +87,11 @@ new FormModel {
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 9
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 615, 495 )
+			"location": new java.awt.Point( 20, 15 )
+			"size": new java.awt.Dimension( 585, 475 )
 		} )
 	}
 }

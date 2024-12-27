@@ -1,0 +1,128 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+			"$columnSpecs": "65dlu, labelcompgap, 77dlu, labelcompgap, 56dlu, labelcompgap, 94dlu, labelcompgap, 88dlu"
+			"$rowSpecs": "71dlu, linegap, 90dlu, linegap, 30dlu, linegap, 53dlu, linegap, 34dlu, linegap, 49dlu"
+		} ) {
+			name: "this"
+			"title": "借还器材列表"
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "器材名称："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 1
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 1
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "所借班级："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级列表.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 5
+				"gridY": 1
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 7
+				"gridY": 1
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查询"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/搜索.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 9
+				"gridY": 1
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+				} )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 3
+				"gridHeight": 3
+				"gridWidth": 5
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "所借人姓名："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 7
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 7
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "所借个数："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/职称评定.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 5
+				"gridY": 7
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 7
+				"gridY": 7
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "所借人学号："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/password.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 9
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 9
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "确认借出"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/确认.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 2, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 7
+				"gridY": 9
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 5 )
+			"size": new java.awt.Dimension( 800, 640 )
+		} )
+	}
+}

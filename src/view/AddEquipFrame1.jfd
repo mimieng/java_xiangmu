@@ -1,0 +1,25 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+			"$columnSpecs": "default, labelcompgap, 190dlu"
+			"$rowSpecs": "default, linegap, 41dlu, linegap, 94dlu"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "无权限"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 32, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridHeight": 5
+				"gridWidth": 3
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

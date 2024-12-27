@@ -1,0 +1,70 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+			"$columnSpecs": "105dlu, labelcompgap, 131dlu, labelcompgap, 115dlu"
+			"$rowSpecs": "54dlu, linegap, 107dlu, linegap, 106dlu, linegap, default"
+		} ) {
+			name: "this"
+			"title": "添加器材信息"
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "器材名称："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级名称.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 1
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txt_name"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 1
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "器材个数："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/职称评定.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 3
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 3
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn_sure"
+				"text": "确定"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/确认.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 5
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btn_reset"
+				"text": "重置"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/重置.png" )
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 4, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 5
+				"gridY": 5
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints LEFT
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 680, 525 )
+		} )
+	}
+}
