@@ -54,32 +54,12 @@ new FormModel {
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu4"
-					"text": "客户管理"
+					"text": "买药"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级管理.png" )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "item_addKu"
-						"text": "添加客户"
+						"text": "买药"
 						"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
-					} )
-					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_KuList"
-						"text": "客户列表"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户列表.png" )
-					} )
-				} )
-				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-					name: "menu5"
-					"text": "员工管理"
-					"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
-					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_addYu"
-						"text": "添加员工"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
-					} )
-					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_YuList"
-						"text": "员工列表"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户列表.png" )
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {

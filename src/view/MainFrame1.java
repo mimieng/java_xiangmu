@@ -10,21 +10,21 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import com.jgoodies.forms.factories.*;
 import com.jgoodies.forms.layout.*;
-import pojo.Admin;
+import pojo.User;
 
 /**
  * @author chentao
  */
-public class MainFrame extends JFrame {
+public class MainFrame1 extends JFrame {
     public static String userType;
-    public  static Admin admin;
-    public MainFrame(String mUserType, Admin mAdmin) {
+    public  static User admin;
+    public MainFrame1(String mUserType, User mAdmin) {
         userType = mUserType;
         admin = mAdmin;
         initComponents();
         item_psw.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                EditPswFrame editPswFrame = new EditPswFrame();
+                EditPswFrame1 editPswFrame = new EditPswFrame1();
                 editPswFrame.setVisible(true);
             }
         });
@@ -35,32 +35,32 @@ public class MainFrame extends JFrame {
         });
         item_addKu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               new addclient().setVisible(true);
+               new CarRent().setVisible(true);
             }
         });
-        item_KuList.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new ClientList().setVisible(true);
-            }
-        });
-        item_addYu.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new addstaff().setVisible(true);
-            }
-        });
-        item_YuList.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new StaffList().setVisible(true);
-            }
-        });
+//        item_KuList.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                new ClientList().setVisible(true);
+//            }
+//        });
+//        item_addYu.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                new addstaff().setVisible(true);
+//            }
+//        });
+//        item_YuList.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                new StaffList().setVisible(true);
+//            }
+//        });
         item_addCar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new AddmedicinesFrame().setVisible(true);
+                new addmedicines().setVisible(true);
             }
         });
         item_CarList.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new medicinesManageFrame().setVisible(true);
+                new medicinesManageFrame1().setVisible(true);
             }
         });
         item_aboutUs.addActionListener(new ActionListener() {
@@ -80,10 +80,6 @@ public class MainFrame extends JFrame {
         item_CarList = new JMenuItem();
         menu4 = new JMenu();
         item_addKu = new JMenuItem();
-        item_KuList = new JMenuItem();
-        menu5 = new JMenu();
-        item_addYu = new JMenuItem();
-        item_YuList = new JMenuItem();
         menu6 = new JMenu();
         item_aboutUs = new JMenuItem();
         panel1 = new JPanel();
@@ -135,37 +131,15 @@ public class MainFrame extends JFrame {
 
             //======== menu4 ========
             {
-                menu4.setText("\u5ba2\u6237\u7ba1\u7406");
+                menu4.setText("\u4e70\u836f");
                 menu4.setIcon(new ImageIcon(getClass().getResource("/\u73ed\u7ea7\u7ba1\u7406.png")));
 
                 //---- item_addKu ----
-                item_addKu.setText("\u6dfb\u52a0\u5ba2\u6237");
+                item_addKu.setText("\u4e70\u836f");
                 item_addKu.setIcon(new ImageIcon(getClass().getResource("/\u6dfb\u52a0.png")));
                 menu4.add(item_addKu);
-
-                //---- item_KuList ----
-                item_KuList.setText("\u5ba2\u6237\u5217\u8868");
-                item_KuList.setIcon(new ImageIcon(getClass().getResource("/\u7528\u6237\u5217\u8868.png")));
-                menu4.add(item_KuList);
             }
             menuBar1.add(menu4);
-
-            //======== menu5 ========
-            {
-                menu5.setText("\u5458\u5de5\u7ba1\u7406");
-                menu5.setIcon(new ImageIcon(getClass().getResource("/\u7528\u6237\u540d.png")));
-
-                //---- item_addYu ----
-                item_addYu.setText("\u6dfb\u52a0\u5458\u5de5");
-                item_addYu.setIcon(new ImageIcon(getClass().getResource("/\u6dfb\u52a0.png")));
-                menu5.add(item_addYu);
-
-                //---- item_YuList ----
-                item_YuList.setText("\u5458\u5de5\u5217\u8868");
-                item_YuList.setIcon(new ImageIcon(getClass().getResource("/\u7528\u6237\u5217\u8868.png")));
-                menu5.add(item_YuList);
-            }
-            menuBar1.add(menu5);
 
             //======== menu6 ========
             {
@@ -204,12 +178,12 @@ public class MainFrame extends JFrame {
     private JMenuItem item_CarList;
     private JMenu menu4;
     private JMenuItem item_addKu;
-    private JMenuItem item_KuList;
-    private JMenu menu5;
-    private JMenuItem item_addYu;
-    private JMenuItem item_YuList;
     private JMenu menu6;
     private JMenuItem item_aboutUs;
     private JPanel panel1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+
+
+
+
 }

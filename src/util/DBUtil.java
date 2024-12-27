@@ -10,7 +10,7 @@ public class DBUtil {
     public static Connection getCon()
     {
         Connection con = null;
-        String url = "jdbc:mysql://localhost:3306/db_stu";
+        String url = "jdbc:mysql://localhost:3306/db_mead";
         String user = "root";
         String psw = "123456";
         try {
@@ -37,4 +37,6 @@ public class DBUtil {
             }
         }
     }
+
+
 }

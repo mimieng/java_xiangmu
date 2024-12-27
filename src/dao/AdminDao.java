@@ -14,7 +14,7 @@ public class AdminDao {
      * 管理员登陆
      */
     public Admin login(Admin admin){
-        String sql = "select * from s_admin where name=? and password=?";
+        String sql = "select * from admin where name=? and password=?";
         Admin adminRst = null;
         con = DBUtil.getCon();
         try {
@@ -27,7 +27,7 @@ public class AdminDao {
                 adminRst.setId(executeQuery.getInt("id"));
                 adminRst.setName(executeQuery.getString("name"));
                 adminRst.setPassword(executeQuery.getString("password"));
-                adminRst.setCreateDate(executeQuery.getString("createDate"));
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -37,8 +37,8 @@ public class AdminDao {
         return adminRst;
     }
     public String editPassword(Admin admin,String newPassword){
-        String sql = "select * from s_admin where id=? and password=?";
-        String sqlString = "update s_admin set password = ? where id = ?";
+        String sql = "select * from admin where id=? and password=?";
+        String sqlString = "update admin set password = ? where id = ?";
         PreparedStatement prst = null;
         String retString = "修改失败";
         int id = 0;

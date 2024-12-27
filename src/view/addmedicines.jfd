@@ -1,0 +1,26 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
+			"$columnSpecs": "48dlu, labelcompgap, 150dlu"
+			"$rowSpecs": "49dlu, linegap, 31dlu, linegap, 29dlu, linegap, 33dlu, linegap, default, linegap, default"
+		} ) {
+			name: "this"
+			"title": "添加药品"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "无权限"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 31, false )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridHeight": 7
+				"gridWidth": 3
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

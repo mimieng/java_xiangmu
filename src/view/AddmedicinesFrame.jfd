@@ -4,93 +4,97 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
-			"$columnSpecs": "109dlu, labelcompgap, 141dlu, labelcompgap, 100dlu"
-			"$rowSpecs": "50dlu, linegap, 38dlu, linegap, 47dlu, linegap, 48dlu, linegap, 37dlu"
+			"$columnSpecs": "87dlu, labelcompgap, 35dlu, labelcompgap, 30dlu, labelcompgap, 40dlu, labelcompgap, 33dlu"
+			"$rowSpecs": "40dlu, linegap, 30dlu, linegap, 40dlu, linegap, 30dlu, linegap, 30dlu"
 		} ) {
 			name: "this"
-			"title": "登录窗口"
-			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/学生.png" )
-			"$sizePolicy": 1
+			"title": "添加药品窗口"
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "欢迎来到药店管理登录系统"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/OIP-C.jpg" )
-				"font": new com.jformdesigner.model.SwingDerivedFont( null, 1, 20, false )
+				"text": "药品名称："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级列表.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
-				"gridWidth": 5
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
-				"text": "用户名："
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
-			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
-				"gridX": 1
-				"gridY": 3
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "txt_name"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
-				"gridY": 3
+				"gridWidth": 5
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
-				"text": "密  码："
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/密码.png" )
+				name: "label2"
+				"text": "所属类别："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级名称.png" )
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 1
+				"gridY": 3
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cb_category"
+			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
+				"gridX": 3
+				"gridY": 3
+				"gridWidth": 6
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "药品介绍："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级介绍.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 5
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "pf_psw"
+				name: "txt_info"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 5
+				"gridWidth": 3
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label4"
-				"text": "用户类型："
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/userType.png" )
+				name: "label3"
+				"text": "价格："
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/新人课程.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 1
 				"gridY": 7
 				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
 			} )
-			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "cb_type"
-				"model": new javax.swing.DefaultComboBoxModel {
-					selectedItem: "系统管理员"
-					addElement( "系统管理员" )
-					addElement( "客户" )
-				}
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txt_money"
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
 				"gridX": 3
 				"gridY": 7
+				"gridWidth": 5
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "btn_login"
-				"text": "登录"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/登录.png" )
+				name: "btn_sure"
+				"text": "确认"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/确认.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
-				"gridX": 1
 				"gridY": 9
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints CENTER
+				"gridWidth": 3
+				"gridX": 2
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btn_reset"
 				"text": "重置"
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/重置.png" )
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
-				"gridX": 3
+				"gridX": 7
 				"gridY": 9
-				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints RIGHT
+				"gridWidth": 3
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints LEFT
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 10 )
-			"size": new java.awt.Dimension( 690, 440 )
+			"size": new java.awt.Dimension( 660, 590 )
+			"location": new java.awt.Point( 0, 0 )
 		} )
 	}
 }

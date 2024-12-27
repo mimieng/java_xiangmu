@@ -7,7 +7,9 @@ package view;
 import com.jgoodies.forms.factories.CC;
 import com.jgoodies.forms.layout.FormLayout;
 import dao.AdminDao;
+import dao.UserDao;
 import pojo.Admin;
+import pojo.User;
 import util.StringUtil;
 
 import javax.swing.*;
@@ -17,13 +19,13 @@ import java.awt.event.ActionListener;
 /**
  * @author 晚吟
  */
-public class EditPswFrame extends JFrame  {
-    public EditPswFrame() {
+public class EditPswFrame1 extends JFrame  {
+    public EditPswFrame1() {
 
         initComponents();
-        if (MainFrame.userType.equals("系统管理员")) {
-            Admin admin = MainFrame.admin;
-            label_user.setText("【欢迎系统管理员】" + admin.getName());
+        if (MainFrame1.userType.equals("客户")) {
+            User admin = MainFrame1.admin;
+            label_user.setText("【欢迎客户】" + admin.getName());
         }
         btn_sure.addActionListener(new ActionListener() {
 
@@ -33,22 +35,22 @@ public class EditPswFrame extends JFrame  {
                 String new1 = pf_new1.getText().toString();
                 String new2 = pf_new2.getText().toString();
                 if (StringUtil.isEmpty(old)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "请输入旧密码！");
+                    JOptionPane.showMessageDialog(EditPswFrame1.this, "请输入旧密码！");
                 }
                 if (StringUtil.isEmpty(new1)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "请输入新密码！");
+                    JOptionPane.showMessageDialog(EditPswFrame1.this, "请输入新密码！");
                 }
                 if (StringUtil.isEmpty(new2)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "请输入确认密码！");
+                    JOptionPane.showMessageDialog(EditPswFrame1.this, "请输入确认密码！");
                 }
                 if (!new1.equals(new2)){
-                    JOptionPane.showMessageDialog(EditPswFrame.this, "两次输入的密码不一致！");
+                    JOptionPane.showMessageDialog(EditPswFrame1.this, "两次输入的密码不一致！");
                 }
-                AdminDao adminDao = new AdminDao();
-                Admin admin =  MainFrame.admin;
+                UserDao adminDao = new UserDao();
+                User admin =  MainFrame1.admin;
                 admin.setPassword(old);
                 String str = adminDao.editPassword(admin, new1);
-                JOptionPane.showMessageDialog(EditPswFrame.this, str);
+                JOptionPane.showMessageDialog(EditPswFrame1.this, str);
 
 
             }
