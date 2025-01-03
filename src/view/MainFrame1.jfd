@@ -1,35 +1,34 @@
-JFDML JFormDesigner: "8.2.4.0.393" Java: "17.0.10" encoding: "UTF-8"
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.5" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
-			"$columnSpecs": "110dlu, labelcompgap, 82dlu, labelcompgap, 67dlu, labelcompgap, 151dlu"
-			"$rowSpecs": "56dlu, linegap, 58dlu, linegap, 222dlu"
+			"$columnSpecs": "2560"
+			"$rowSpecs": "1600"
 		} ) {
 			name: "this"
+			"title": "系统管理员主界面"
 			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/学生管理.png" )
-			"title": "学生体育器材管理系统主页面"
-			"background": sfield java.awt.Color pink
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jgoodies.forms.layout.FormLayout ) {
-				"$columnSpecs": "default, labelcompgap, default"
-				"$rowSpecs": "default, linegap, default, linegap, 147dlu"
+				"$columnSpecs": "default"
+				"$rowSpecs": "default"
 			} ) {
 				name: "panel1"
-				"background": sfield java.awt.Color pink
+				"background": sfield java.awt.Color darkGray
 			}, new FormLayoutConstraints( class com.jgoodies.forms.layout.CellConstraints ) {
-				"gridHeight": 5
-				"gridWidth": 7
+				"hAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
+				"vAlign": sfield com.jgoodies.forms.layout.CellConstraints FILL
 			} )
 			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 				name: "menuBar1"
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-					name: "menu1"
+					name: "menu2"
 					"text": "系统设置"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/系统设置.png" )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "item_psw"
-						"text": "密码修改"
+						"text": "修改密码"
 						"icon": new com.jformdesigner.model.SwingIcon( 0, "/修改密码.png" )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
@@ -38,69 +37,45 @@ new FormModel {
 						"icon": new com.jformdesigner.model.SwingIcon( 0, "/退出.png" )
 					} )
 				} )
-				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
-					name: "menuBar2"
-					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-						name: "menu2"
-						"text": "器材查询"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/搜索.png" )
-						add( new FormComponent( "javax.swing.JMenuItem" ) {
-							name: "item_equip"
-							"text": "器材大全"
-							"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级介绍.png" )
-						} )
-						add( new FormComponent( "javax.swing.JMenuItem" ) {
-							name: "item_add"
-							"text": "添加器材"
-							"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
-						} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu3"
+					"text": "药品管理"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/1.jpg" )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "item_addCar"
+						"text": "添加药品"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
 					} )
-				} )
-				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
-					name: "menuBar3"
-					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-						name: "menu3"
-						"text": "器材管理"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
-						add( new FormComponent( "javax.swing.JMenuItem" ) {
-							name: "item_lend"
-							"text": "借出情况"
-							"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户列表.png" )
-						} )
-						add( new FormComponent( "javax.swing.JMenuItem" ) {
-							name: "item_return"
-							"text": "归还情况"
-							"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
-						} )
-					} )
-				} )
-				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
-					name: "menuBar4"
-					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-						name: "menu5"
-						"text": "借用器材"
-						"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级列表.png" )
-						add( new FormComponent( "javax.swing.JMenuItem" ) {
-							name: "item_1"
-							"text": "借用器材"
-							"icon": new com.jformdesigner.model.SwingIcon( 0, "/用户名.png" )
-						} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "item_CarList"
+						"text": "药品列表"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/1.jpg" )
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu4"
+					"text": "买药"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/班级管理.png" )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "item_addKu"
+						"text": "买药"
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/添加.png" )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu6"
 					"text": "帮助"
 					"icon": new com.jformdesigner.model.SwingIcon( 0, "/帮助.png" )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "item_AboutUs"
+						name: "item_aboutUs"
 						"text": "关于我们"
 						"icon": new com.jformdesigner.model.SwingIcon( 0, "/关于我们.png" )
 					} )
 				} )
 			}
 		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 505, 395 )
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 760, 615 )
 		} )
 	}
 }

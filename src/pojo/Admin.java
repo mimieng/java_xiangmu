@@ -4,13 +4,13 @@ public class Admin {
 	private int id;
 	private String name;
 	private String password;
+	private String createDate;
 
-
-	public Admin(int id, String name, String password) {
+	public Admin(int id, String name, String password, String createDate) {
 		this.id = id;
 		this.name = name;
 		this.password = password;
-
+		this.createDate = createDate;
 	}
 
 	public Admin() {
@@ -34,7 +34,12 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	public String getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
+	}
 
 	@Override
 	public String toString() {
@@ -42,7 +47,7 @@ public class Admin {
 				"id=" + id +
 				", name='" + name + '\'' +
 				", password='" + password + '\'' +
-
+				", createDate='" + createDate + '\'' +
 				'}';
 	}
 }
